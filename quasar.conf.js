@@ -133,9 +133,9 @@ module.exports = function (ctx) {
         swDest: 'service-worker.js',
       },
       manifest: {
-        name: 'Control de Prestamos',
-        short_name: 'Control de Prestamos',
-        description: 'Control de Prestamos',
+        name: 'Panel de administración',
+        short_name: 'Panel de administración',
+        description: 'Panel de administración',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#027be3',

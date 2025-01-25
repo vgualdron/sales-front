@@ -5,7 +5,7 @@
         <q-toolbar-title>
           Iniciar Sesión
         </q-toolbar-title>
-        <div>Control de Prestamos</div>
+        <div>Panel de administración</div>
       </q-toolbar>
     </q-header>
     <q-page-container>

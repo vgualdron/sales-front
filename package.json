@@ -1,8 +1,8 @@
 {
-  "name": "prestamos-app",
+  "name": "panel-app",
   "version": "0.0.1",
-  "description": "Control de prestamos",
-  "productName": "Control de prestamos",
+  "description": "Panel de administración",
+  "productName": "Panel de administración",
   "author": "victor.gualdron.r@gmail.com",
   "private": true,
   "scripts": {

@@ -1,0 +1,71 @@
+{
+  "name": "prestamos-app",
+  "version": "0.0.1",
+  "description": "Control de prestamos",
+  "productName": "Control de prestamos",
+  "author": "victor.gualdron.r@gmail.com",
+  "private": true,
+  "scripts": {
+    "add:cordova": "quasar mode add cordova",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "build:pwa": "quasar build -m pwa",
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "serve:android": "quasar dev -m capacitor -T android -- --buildConfig=\"../build.capacitor.json\"",
+    "build:android": "quasar build -m capacitor -T android --buildConfig=\"../build.capacitor.json\""
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "cropperjs": "^1.5.6",
+    "dom-to-image": "^2.6.0",
+    "dotenv": "^16.0.3",
+    "export-from-json": "^1.7.3",
+    "firebase": "^10.12.3",
+    "firebase-admin": "^12.2.0",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
+    "idb": "^8.0.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.31",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "moment": "^2.30.1",
+    "quasar": "^1.0.0",
+    "v-money": "^0.8.1",
+    "vue-pdf": "^4.3.0",
+    "vuedraggable": "^2.24.3",
+    "web-push": "^3.6.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@quasar/app": "^2.0.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-webpack-plugin": "^2.0.0",
+    "workbox-webpack-plugin": "^5.1.4"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

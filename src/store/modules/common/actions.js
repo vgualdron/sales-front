@@ -11,7 +11,7 @@ export default {
       commit(types.mutations.SET_YARD, response.data.user.yard);
       commit(types.mutations.SET_CITY, response.data.user.city);
       commit(types.mutations.SET_CURRENT_YARD, response.data.user.currentYard);
-      commit(types.mutations.SET_USER, response.data.user.user);
+      commit(types.mutations.SET_USER, JSON.stringify(response.data.user));
       commit(types.mutations.SET_DOCUMENT, response.data.user.document);
       commit(types.mutations.SET_NAME, response.data.user.name);
       commit(types.mutations.SET_TOKEN, response.data.token);

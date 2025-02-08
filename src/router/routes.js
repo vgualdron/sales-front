@@ -62,6 +62,18 @@ const routes = [
     ],
   },
   {
+    path: '/shop',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Convenios',
+        component: () => import('pages/Shop.vue'),
+        meta: { permissions: [] },
+      },
+    ],
+  },
+  {
     path: '/report-dinamic',
     component: () => import('layouts/MainLayout.vue'),
     children: [

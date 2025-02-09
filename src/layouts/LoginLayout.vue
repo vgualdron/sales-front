@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
-          Iniciar Sesión
+          Progress
         </q-toolbar-title>
         <div>Panel de administración</div>
       </q-toolbar>

@@ -7,6 +7,13 @@ const routes = [
     ],
   },
   {
+    path: '/validate-card/:id',
+    component: () => import('layouts/LoginLayout.vue'),
+    children: [
+      { path: '', name: 'Validar asociado', component: () => import('pages/ValidateCard.vue') },
+    ],
+  },
+  {
     path: '/home',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -86,27 +93,7 @@ const routes = [
     ],
   },
   {
-    component: () => import('layouts/LoginLayout.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Reportes Dinamicos',
-        component: () => import('pages/ReportDinamic.vue'),
-        meta: { permissions: ['reportsDinamic.list'] },
-      },
-    ],
-  },
-  {
-    path: '/validate-card/:id',
-    component: () => import('layouts/LoginLayout.vue'),
-    children: [
-      { path: '', name: 'Validar asociado', component: () => import('pages/ValidateCard.vue') },
-    ],
-  },
-  // Always leave this as last one,
-  // but you can also remove it
-  {
-    path: '*',
+    path: '/:pathMatch(.*)*',
     component: () => import('pages/Error404.vue'),
   },
   {

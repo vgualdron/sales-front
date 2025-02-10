@@ -37,7 +37,8 @@ export default (/* { store, ssrContext } */) => {
       spinnerSize: 30,
       delay: 100,
     });
-    if (to.path === '/') {
+    console.log(to.path);
+    if (to.path === '/' || to.path.includes('/validate-card')) {
       next();
       return;
     }

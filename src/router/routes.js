@@ -7,13 +7,6 @@ const routes = [
     ],
   },
   {
-    path: '/validate-card/:id',
-    component: () => import('layouts/LoginLayout.vue'),
-    children: [
-      { path: '', name: 'Validar asociado', component: () => import('pages/ValidateCard.vue') },
-    ],
-  },
-  {
     path: '/home',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -45,18 +38,6 @@ const routes = [
     ],
   },
   {
-    path: '/new',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Recolección de direcciones',
-        component: () => import('pages/New.vue'),
-        meta: { permissions: ['new.list'] },
-      },
-    ],
-  },
-  {
     path: '/param',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -65,18 +46,6 @@ const routes = [
         name: 'Parametros',
         component: () => import('pages/Configuration.vue'),
         meta: { permissions: ['parameter.list'] },
-      },
-    ],
-  },
-  {
-    path: '/shop',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Convenios',
-        component: () => import('pages/Shop.vue'),
-        meta: { permissions: [] },
       },
     ],
   },

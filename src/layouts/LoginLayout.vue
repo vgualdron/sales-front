@@ -3,9 +3,9 @@
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
-          Progress
+          Iniciar sesión
         </q-toolbar-title>
-        <div>Panel de administración</div>
+        <div>Administración</div>
       </q-toolbar>
     </q-header>
     <q-page-container>

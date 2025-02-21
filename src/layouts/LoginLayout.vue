@@ -5,7 +5,7 @@
         <q-toolbar-title>
           Iniciar sesión
         </q-toolbar-title>
-        <div>Administración</div>
+        <div>Administración y ventas</div>
       </q-toolbar>
     </q-header>
     <q-page-container>

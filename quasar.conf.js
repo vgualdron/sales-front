@@ -133,9 +133,9 @@ module.exports = function (ctx) {
         swDest: 'service-worker.js',
       },
       manifest: {
-        name: 'Panel de administración',
-        short_name: 'Panel de administración',
-        description: 'Panel de administración',
+        name: 'Administración y ventas',
+        short_name: 'Administración y ventas',
+        description: 'Administración y ventas',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#027be3',

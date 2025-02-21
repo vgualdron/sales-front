@@ -3,12 +3,13 @@ import role, { name as roleName } from './role';
 import permission, { name as permissionName } from './permission';
 import user, { name as userName } from './user';
 import home, { name as homeName } from './home';
-import news, { name as newName } from './new';
+import category, { name as categoryName } from './category';
 import file, { name as fileName } from './file';
 import configuration, { name as configurationName } from './configuration';
 import notification, { name as notificationName } from './notification';
 import report, { name as reportName } from './report';
-import shop, { name as shopName } from './shop';
+import product, { name as productName } from './product';
+import image, { name as imageName } from './image';
 
 export default {
   [homeName]: home,
@@ -16,10 +17,11 @@ export default {
   [roleName]: role,
   [permissionName]: permission,
   [userName]: user,
-  [newName]: news,
+  [categoryName]: category,
   [fileName]: file,
   [configurationName]: configuration,
   [notificationName]: notification,
   [reportName]: report,
-  [shopName]: shop,
+  [productName]: product,
+  [imageName]: image,
 };

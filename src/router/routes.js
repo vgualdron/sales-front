@@ -38,6 +38,30 @@ const routes = [
     ],
   },
   {
+    path: '/category',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Categorias',
+        component: () => import('pages/Category.vue'),
+        meta: { permissions: ['category.list'] },
+      },
+    ],
+  },
+  {
+    path: '/product',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Productos',
+        component: () => import('pages/Product.vue'),
+        meta: { permissions: ['product.list'] },
+      },
+    ],
+  },
+  {
     path: '/param',
     component: () => import('layouts/MainLayout.vue'),
     children: [

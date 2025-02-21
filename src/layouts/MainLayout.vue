@@ -73,8 +73,8 @@
       content-class="bg-grey-1"
     >
       <q-list>
-        <q-item-label header class="text-grey-8">
-          <img src="~/assets/logo-rectangle.png" width="260" class="q-mr-auto q-ml-auto">
+        <q-item-label header class="text-grey-8 text-center">
+          <img src="~/assets/logo-rectangle.png" width="60" class="q-mr-auto q-ml-auto">
         </q-item-label>
         <q-expansion-item
           v-for="({ name, icon, label, options }) in linksData"

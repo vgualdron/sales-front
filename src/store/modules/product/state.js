@@ -1,6 +1,6 @@
 export default function () {
   return {
-    shops: [],
-    statusAddShop: {},
+    products: [],
+    statusAddProduct: {},
   };
 }

@@ -1,8 +1,8 @@
 {
   "name": "panel-app",
   "version": "0.0.1",
-  "description": "Panel de administración",
-  "productName": "Panel de administración",
+  "description": "Administración y ventas",
+  "productName": "Administración y ventas",
   "author": "victor.gualdron.r@gmail.com",
   "private": true,
   "scripts": {

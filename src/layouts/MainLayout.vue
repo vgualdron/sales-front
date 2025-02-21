@@ -76,6 +76,16 @@
         <q-item-label header class="text-grey-8 text-center">
           <img src="~/assets/logo-rectangle.png" width="60" class="q-mr-auto q-ml-auto">
         </q-item-label>
+        <EssentialLink
+          key="sales"
+          title="Facturar"
+          link="/home"
+          :class="'/home' === $router.currentRoute.name && 'bg-blue-grey-3'"
+          classes="q-ml-none"
+          icon="monetization_on"
+          :clickable="'/home' !== $router.currentRoute.path"
+          :active="'/home' === $router.currentRoute.path"
+        />
         <q-expansion-item
           v-for="({ name, icon, label, options }) in linksData"
           expand-separator

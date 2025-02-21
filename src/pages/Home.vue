@@ -1,15 +1,15 @@
 <template>
   <q-page class="">
-    <home />
+    <table-product />
   </q-page>
 </template>
 
 <script>
-import Home from 'components/home/Home.vue';
+import TableProduct from 'components/home/TableProduct.vue';
 
 export default {
   components: {
-    Home,
+    TableProduct,
   },
   data() {
     return {

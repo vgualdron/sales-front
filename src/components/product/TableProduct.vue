@@ -8,7 +8,7 @@
           color="primary"
           v-model="filter"
           class="q-ml-xs"
-          placeholder="Buscar usuario"
+          placeholder="Buscar"
           clearable
           outlined
         >

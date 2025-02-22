@@ -9,7 +9,11 @@
         </q-card-section>
         <q-separator />
         <q-card-section style="max-height: 60vh" class="scroll text-center">
-          <svg ref="barcode"></svg>
+          <div ref="barcode">
+            <div v-for="(n, index) in amount" :key="index" class="svg">
+              <svg :ref="el => setRef(el, index)"></svg>
+            </div>
+          </div>
           <q-form @submit="onSubmit" class="row">
             <div class="col-6 q-pl-none">
               <q-input
@@ -60,12 +64,13 @@ export default {
       isLoading: false,
       reference: '',
       amount: 1,
+      barcodeRefs: [],
     };
   },
   mounted() {
     this.reference = this.row.reference;
     this.$nextTick(() => {
-      this.generateBarcode();
+      this.generateBarcodes();
     });
   },
   computed: {
@@ -92,12 +97,21 @@ export default {
     async onSubmit() {
       this.printBarcode();
     },
-    generateBarcode() {
-      JsBarcode(this.$refs.barcode, this.reference, {
-        format: 'CODE128', // Puedes cambiar a otros formatos como EAN13
-        width: 2,
-        height: 50,
-        displayValue: true,
+    setRef(el, index) {
+      if (el) {
+        this.barcodeRefs[index] = el;
+      }
+    },
+    generateBarcodes() {
+      this.barcodeRefs.forEach((el) => {
+        if (el) {
+          JsBarcode(el, this.reference, {
+            format: 'CODE128',
+            width: 2,
+            height: 50,
+            displayValue: true,
+          });
+        }
       });
     },
     printBarcode() {
@@ -111,3 +125,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.svg {
+  margin: 10px;
+}
+</style>

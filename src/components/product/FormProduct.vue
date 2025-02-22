@@ -54,7 +54,7 @@
                 label="Descripción"
                 outlined/>
             </div>
-            <div class="col-2 q-pl-none">
+            <div class="col-4 q-pl-none">
               <q-input
                 outlined
                 v-model="price"
@@ -64,7 +64,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-2 q-pl-sm">
+            <div class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="amount"
@@ -74,7 +74,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-2 q-pl-sm">
+            <div class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="amountMin"
@@ -84,7 +84,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-2 q-pl-sm">
+            <div class="col-4 q-pl-none">
               <q-input
                 outlined
                 v-model="amountMiddle"
@@ -94,7 +94,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-2 q-pl-sm">
+            <div class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="amountMax"
@@ -104,7 +104,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-2 q-pl-sm">
+            <div class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="priority"

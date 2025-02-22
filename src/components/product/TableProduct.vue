@@ -44,10 +44,16 @@
         <q-tr :props="props" @click="clickRow(props.row)">
           <q-td key="actions" :props="props">
             <q-btn
+              icon="print"
+              type="reset"
+              color="primary"
+              size="sm"
+              class="col q-ml-sm"
+              @click="openModal('print', props.row)" />
+            <q-btn
               icon="delete"
               type="reset"
               color="primary"
-              flat
               size="sm"
               class="col q-ml-sm"
               @click="openModal('delete', props.row)" />
@@ -250,6 +256,7 @@
       </template>
     </q-table>
     <form-product v-if="showModal" v-model="showModal"/>
+    <form-code v-if="showModalPrint" v-model="showModalPrint" :row="itemSelected"/>
     <form-change-image-product
       v-if="showModalChangeImageProduct"
       v-model="showModalChangeImageProduct"
@@ -259,6 +266,7 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import FormProduct from 'components/product/FormProduct.vue';
+import FormCode from 'components/product/FormCode.vue';
 import CropperDialog from 'components/common/CropperDialog.vue';
 import productTypes from '../../store/modules/product/types';
 import imageTypes from '../../store/modules/image/types';
@@ -334,6 +342,7 @@ export default {
       filter: '',
       isDiabledAdd: false,
       showModal: false,
+      showModalPrint: false,
       showModalChangeImageProduct: false,
       fileName: null,
       showOverlay: false,
@@ -397,6 +406,7 @@ export default {
       this.showModal = true;
     },
     openModal(action, row) {
+      this.itemSelected = { ...row };
       if (action === 'delete') {
         this.$q.dialog({
           title: 'Eliminar',
@@ -420,6 +430,8 @@ export default {
         }).onDismiss(() => {
           // console.log('I am triggered on both OK and Cancel')
         });
+      } else if (action === 'print') {
+        this.showModalPrint = true;
       }
     },
     handleFile(file, ref) {
@@ -480,6 +492,7 @@ export default {
   },
   components: {
     FormProduct,
+    FormCode,
     CropperDialog,
   },
 };

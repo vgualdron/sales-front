@@ -28,6 +28,7 @@
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",
     "idb": "^8.0.0",
+    "jsbarcode": "^3.11.6",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.31",
     "jwt-decode": "^4.0.0",

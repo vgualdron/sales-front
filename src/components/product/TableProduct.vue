@@ -74,6 +74,29 @@
               <q-input v-model="scope.value" dense autofocus />
             </q-popup-edit>
           </q-td>
+          <q-td key="type" :props="props">
+            <q-icon size="xs" name="edit" />
+            {{ props.row.type }}
+            <q-popup-edit
+              :value="props.row.type"
+              v-slot="scope"
+              @input="val => save('type', val)"
+              buttons>
+              <q-select
+                outlined
+                v-model="scope.value"
+                :options="[
+                  {
+                    label: 'producto',
+                    value: 'producto',
+                  },
+                  {
+                    label: 'servicio',
+                    value: 'servicio',
+                  },
+                ]"/>
+            </q-popup-edit>
+          </q-td>
           <q-td key="categorie_id" :props="props">
             <q-icon size="xs" name="edit" />
             {{ optionsCategories.find((item) => props.row.categorie_id === item.value).label }}
@@ -301,6 +324,9 @@ export default {
           field: (row) => row.name,
           format: (val) => `${val}`,
           sortable: true,
+        },
+        {
+          name: 'type', align: 'left', label: 'Tipo', field: 'type', sortable: true,
         },
         {
           name: 'categorie_id',

@@ -13,21 +13,33 @@
             <div class="col-6 q-pl-none">
               <q-select
                 outlined
+                v-model="type"
+                label="Tipo *"
+                placeholder="Seleccione el tipo"
+                reactive-rules
+                emit-value
+                map-options
+                :options="[
+                  {
+                    label: 'producto',
+                    value: 'producto',
+                  },
+                  {
+                    label: 'servicio',
+                    value: 'servicio',
+                  },
+                ]"
+                :rules="[(val) => (!!val) || 'La tipo es requerida']" />
+            </div>
+            <div class="col-6 q-pl-sm">
+              <q-select
+                outlined
                 v-model="categorie_id"
                 label="Categoria *"
                 placeholder="Seleccione la categoria"
                 reactive-rules
                 :options="optionsCategories"
                 :rules="[(val) => (!!val) || 'La categoria es requerida']" />
-            </div>
-            <div class="col-6 q-pl-sm">
-              <q-input
-                outlined
-                v-model="name"
-                label="Nombre *"
-                placeholder="Escriba el nombre"
-                reactive-rules
-                :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
             <div class="col-6 q-pl-none">
               <q-input
@@ -41,13 +53,22 @@
             <div class="col-6 q-pl-sm">
               <q-input
                 outlined
+                v-model="name"
+                label="Nombre *"
+                placeholder="Escriba el nombre"
+                reactive-rules
+                :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
+            </div>
+            <div v-if="type === 'producto'" class="col-4 q-pl-none">
+              <q-input
+                outlined
                 v-model="brand"
                 label="Marca *"
                 placeholder="Escriba la marca"
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-12 q-pl-none q-mb-md">
+            <div v-if="type === 'producto'" class="col-8 q-pl-sm q-mb-md">
               <q-input
                 v-model="description"
                 placeholder="Escriba la descripción"
@@ -64,7 +85,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-4 q-pl-sm">
+            <div v-if="type === 'producto'" class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="amount"
@@ -74,7 +95,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-4 q-pl-sm">
+            <div v-if="type === 'producto'" class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="amountMin"
@@ -84,7 +105,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-4 q-pl-none">
+            <div v-if="type === 'producto'" class="col-4 q-pl-none">
               <q-input
                 outlined
                 v-model="amountMiddle"
@@ -94,7 +115,7 @@
                 reactive-rules
                 :rules="[val => val && val.length > 0 || 'Este campo es obligatorio']" />
             </div>
-            <div class="col-4 q-pl-sm">
+            <div v-if="type === 'producto'" class="col-4 q-pl-sm">
               <q-input
                 outlined
                 v-model="amountMax"
@@ -148,15 +169,16 @@ export default {
       isLoading: false,
       showModal: false,
       name: '',
+      type: 'producto',
       reference: '',
-      amount: 0,
-      amountMin: 0,
-      amountMax: 0,
-      amountMiddle: 0,
+      amount: 1,
+      amountMin: 1,
+      amountMax: 10,
+      amountMiddle: 5,
       brand: '',
       description: '',
       price: '',
-      priority: 0,
+      priority: 1,
       categorie_id: '',
     };
   },
@@ -194,6 +216,7 @@ export default {
       this.isLoading = true;
       await this.addProduct({
         name: this.name,
+        type: this.type,
         description: this.description,
         reference: this.reference,
         brand: this.brand,
